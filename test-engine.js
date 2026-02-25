@@ -4,7 +4,7 @@
 
 // ---------------- CONFIG ----------------
 const CFG = window.TEST_APP_CONFIG || {};
-const TOTAL_TIME_SECONDS = Number(CFG.TOTAL_TIME_SECONDS || 45 * 60);
+const TOTAL_TIME_SECONDS = Number(CFG.TOTAL_TIME_SECONDS || 15 * 60);
 const SCRIPT_URL = String(CFG.SCRIPT_URL || "");
 
 // ---------------- STATE ----------------
@@ -325,8 +325,7 @@ $("qText").innerHTML = `
     btn.className = "option-card";
 
     btn.innerHTML = `
-      <span class="option-letter">${opt.value}</span>
-      <span class="option-text">
+<span class="option-text">
         ${opt.label.replace(opt.value + ". ", "")}
       </span>
     `;
