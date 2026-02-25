@@ -258,16 +258,14 @@ function renderQuestion(i) {
   const percent = Math.round(((i + 1) / bank.length) * 100);
   $("qPercent").textContent = percent + "%";
   $("progressBar").style.width = percent + "%";
-}
 
 $("qText").innerHTML = `
-  ${sectionHTML}
   <div class="question-label">Question ${i + 1}</div>
   <div class="question-main">
     ${q.text.replace(/\n/g, "<br>")}
   </div>
 `;
-  $("qExtra").innerHTML = q.extraHTML || "";
+$("qExtra").innerHTML = q.extraHTML || "";
 
   const wrap = $("qOptions");
   wrap.innerHTML = "";
