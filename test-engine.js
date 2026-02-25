@@ -77,100 +77,85 @@ function injectOptionStyles(){
   const style = document.createElement("style");
 
   style.innerHTML = `
-    .options{
-      display:flex !important;
-      flex-direction:column;
-      gap:12px;
-    }
 
-    .option-card{
-      all: unset;
-      box-sizing: border-box;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      padding:14px 16px;
-      border:2px solid #d6e0ea;
-      border-radius:10px;
-      background:#ffffff;
-      cursor:pointer;
-      transition:all .2s ease;
-      font-size:15px;
-      text-align:left;
-      width:100%;
-    }
-
-    .option-card:hover{
-      border-color:#005EB8;
-      background:#f0f7ff;
-    }
-
-    .option-card.selected{
-      border-color:#005EB8;
-      background:#e3f2fd;
-      box-shadow:0 0 0 2px rgba(0,94,184,.15);
-    }
-
-    .option-letter{
-      font-weight:700;
-      color:#005EB8;
-      min-width:28px;
-    }
-
-    .option-text{
-      flex:1;
-    }
-    #qExtra {
-  margin-bottom: 16px;
-}
-
-/* ===== Question spacing fix – ULTRA COMPACT ===== */
-
+/* Container compact */
 #screen-question.card{
-  padding:14px 16px !important;
+  padding:20px 22px !important;
+  border-top: 4px solid #005EB8 !important;
 }
 
-.qtext{
-  margin-bottom:4px !important;
-  line-height:1.25 !important;
-}
-
+/* Question label */
 .question-label{
-  font-size:14px;
+  font-size:13px;
   font-weight:600;
-  color:#003D73;
-  margin-bottom:2px !important;
+  color:#6b7280;
+  margin-bottom:6px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
 }
 
+/* Question text */
 .question-main{
-  line-height:1.3 !important;
-  margin-bottom:2px !important;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:18px;
 }
 
-.question-main br{
-  line-height:1.1 !important;
-}
-
-#qExtra{
-  margin:2px 0 6px 0 !important;
-  line-height:1.3 !important;
-
-}
-
-#qExtra br{
-  line-height:1 !important;
-}
-
-#qExtra div{
-  margin:3px 0 !important;
-}
-
+/* Options */
 .options{
-  margin-top:4px !important;
-  gap:6px !important;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:10px;
 }
-`;
 
+/* Option button */
+.option-card{
+  all:unset;
+  display:flex;
+  align-items:center;
+  padding:14px 18px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  background:#ffffff;
+  cursor:pointer;
+  font-size:15px;
+  transition:all .15s ease;
+}
+
+.option-card:hover{
+  border-color:#005EB8;
+  background:#f5f9ff;
+}
+
+.option-card.selected{
+  border:2px solid #005EB8;
+  background:#eaf3ff;
+}
+
+/* Remove left letter column */
+.option-letter{
+  display:none;
+}
+
+.option-text{
+  flex:1;
+  font-weight:500;
+}
+
+/* Next button modern */
+#btnNext{
+  background:#005EB8;
+  border-radius:6px;
+  padding:10px 18px;
+  font-size:14px;
+}
+
+#btnNext:hover{
+  background:#004a94;
+}
+
+`;
   document.head.appendChild(style);
 }
 
@@ -273,37 +258,6 @@ function renderQuestion(i) {
   const percent = Math.round(((i + 1) / bank.length) * 100);
   $("qPercent").textContent = percent + "%";
   $("progressBar").style.width = percent + "%";
-
-  let sectionHTML = "";
-
-if (i === 0) {
-  sectionHTML = `
-    <div style="
-      padding:8px 12px;
-      background:#E3F2FD;
-      color:#005EB8;
-      font-weight:700;
-      border-radius:6px;
-      margin-bottom:10px;
-    ">
-      Section 1 of 2 – Numerical Aptitude (32 Questions)
-    </div>
-  `;
-}
-
-if (i === 32) {
-  sectionHTML = `
-    <div style="
-      padding:8px 12px;
-      background:#E3F2FD;
-      color:#005EB8;
-      font-weight:700;
-      border-radius:6px;
-      margin-bottom:10px;
-    ">
-      Section 2 of 2 – Data Interpretation (13 Questions)
-    </div>
-  `;
 }
 
 $("qText").innerHTML = `
