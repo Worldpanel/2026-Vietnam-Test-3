@@ -3,8 +3,8 @@ window.QUESTION_BANK = [
   {
     key: "q3_1",
     text: `
-All cycles are slow.<br>
-Motorbikes are not cycles.<br>
+All cycles are slow.
+Motorbikes are not cycles.
 So, motorbikes are not slow.`,
     options: [
       { value: "TRUE", label: "TRUE" },
