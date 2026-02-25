@@ -76,83 +76,97 @@ function injectOptionStyles(){
 
   const style = document.createElement("style");
 
-  style.innerHTML = `
+ style.innerHTML = `
 
-/* Container compact */
+body{
+  background:#f4f6f9;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Card container */
 #screen-question.card{
-  padding:20px 22px !important;
-  border-top: 4px solid #005EB8 !important;
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 32px 36px !important;
+  border-radius: 16px;
+  border-top: 6px solid #005EB8 !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+  background:#fff;
 }
 
 /* Question label */
 .question-label{
-  font-size:13px;
+  font-size:12px;
   font-weight:600;
   color:#6b7280;
-  margin-bottom:6px;
+  margin-bottom:8px;
   text-transform:uppercase;
-  letter-spacing:.5px;
+  letter-spacing:.6px;
 }
 
 /* Question text */
 .question-main{
-  font-size:18px;
-  line-height:1.6;
-  margin-bottom:18px;
+  font-size:20px;
+  line-height:1.7;
+  margin-bottom:28px;
+  font-weight:500;
 }
 
-/* Options */
+/* Options wrapper */
 .options{
   display:flex;
   flex-direction:column;
-  gap:12px;
-  margin-top:10px;
+  gap:14px;
 }
 
-/* Option button */
+/* Option card */
 .option-card{
   all:unset;
   display:flex;
   align-items:center;
-  padding:14px 18px;
-  border:1px solid #d1d5db;
-  border-radius:8px;
-  background:#ffffff;
+  padding:16px 20px;
+  border:1.5px solid #e5e7eb;
+  border-radius:12px;
+  background:#fff;
   cursor:pointer;
   font-size:15px;
-  transition:all .15s ease;
+  transition:all .18s ease;
 }
 
 .option-card:hover{
   border-color:#005EB8;
-  background:#f5f9ff;
+  background:#f2f7ff;
+  transform: translateY(-2px);
 }
 
 .option-card.selected{
   border:2px solid #005EB8;
   background:#eaf3ff;
+  font-weight:600;
 }
 
-/* Remove left letter column */
+/* Hide old letter column */
 .option-letter{
   display:none;
 }
 
-.option-text{
-  flex:1;
-  font-weight:500;
-}
-
-/* Next button modern */
+/* Next button */
 #btnNext{
+  margin-top:24px;
+  padding:12px 24px;
+  font-size:15px;
+  font-weight:600;
+  border:none;
+  border-radius:10px;
   background:#005EB8;
-  border-radius:6px;
-  padding:10px 18px;
-  font-size:14px;
+  color:#fff;
+  cursor:pointer;
+  transition:.2s ease;
 }
 
 #btnNext:hover{
   background:#004a94;
+  transform:translateY(-1px);
 }
 
 `;
